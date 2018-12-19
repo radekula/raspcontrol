@@ -17,19 +17,46 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef __RASPCONTROL_RASPCONTROL_HPP__
-#define __RASPCONTROL_RASPCONTROL_HPP__
+
+
+
+#include <string>
 
 
 
 
-#include "app/app.hpp"
-#include "controller/controller.hpp"
-#include "events/events.hpp"
-#include "gpio/gpio.hpp"
-#include "server/server.hpp"
+#ifndef __RASPCONTROL_EVENT_HPP__
+#define __RASPCONTROL_EVENT_HPP__
 
 
 
+
+namespace raspcontrol {
+
+
+
+
+typedef enum
+{
+    GPIO_CHANGE = 1,
+    GPIO_CHANGE_REQUEST
+} RCEventType;
+
+
+
+
+class RCEvent
+{
+public:
+    raspcontrol::RCEventType type;
+    std::string origin;
+    std::string data;
+};
+
+
+
+
+}
 
 #endif
+

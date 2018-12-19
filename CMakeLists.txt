@@ -26,7 +26,11 @@ link_libraries(${JSONCPP_LIBRARIES})
 
 include_directories (${CMAKE_CURRENT_LIST_DIR}/include)
 include_directories (${CMAKE_CURRENT_LIST_DIR}/include/app)
+include_directories (${CMAKE_CURRENT_LIST_DIR}/include/controller)
+include_directories (${CMAKE_CURRENT_LIST_DIR}/include/events)
+include_directories (${CMAKE_CURRENT_LIST_DIR}/include/gpio)
+include_directories (${CMAKE_CURRENT_LIST_DIR}/include/server)
 
-file (GLOB RASPCONTROL_SRC "src/*.cxx" "src/app/*.cxx")
+file (GLOB RASPCONTROL_SRC "src/*.cxx" "src/app/*.cxx" "src/controller/*.cxx" "src/events/*.cxx" "src/gpio/*.cxx" "src/server/*.cxx")
 
 add_executable (raspcontrol ${RASPCONTROL_SRC})

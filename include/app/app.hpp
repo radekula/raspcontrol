@@ -25,9 +25,29 @@
 
 
 
+#include <memory>
+
+#include "controller/controller.hpp"
+#include "events/events.hpp"
+#include "gpio/gpio.hpp"
+#include "server/server.hpp"
+
+
+
+
+namespace raspcontrol {
+
+
+
+
 class RCApp
 {
 private:
+    std::shared_ptr<raspcontrol::RCEvents>     events;              //< Events loop object pointer
+    std::shared_ptr<raspcontrol::RCController> controller;          //< App controller object pointer
+    std::shared_ptr<raspcontrol::RCGpio>       gpio;                //< Gpio controller object pointer
+    std::shared_ptr<raspcontrol::RCServer>     server;              //< Http server object pointer
+
 public:
     RCApp();
     ~RCApp();
@@ -46,6 +66,11 @@ public:
      */
     void run();
 };
+
+
+
+
+}
 
 
 

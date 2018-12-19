@@ -17,19 +17,74 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef __RASPCONTROL_RASPCONTROL_HPP__
-#define __RASPCONTROL_RASPCONTROL_HPP__
+#include <server/server.hpp>
 
 
 
 
-#include "app/app.hpp"
-#include "controller/controller.hpp"
-#include "events/events.hpp"
-#include "gpio/gpio.hpp"
-#include "server/server.hpp"
+namespace raspcontrol {
 
 
 
 
-#endif
+RCServer::RCServer()
+{
+};
+
+
+
+
+RCServer::~RCServer()
+{
+};
+
+
+
+
+void RCServer::run()
+{
+};
+
+
+
+
+void RCServer::stop()
+{
+};
+
+
+
+
+void RCServer::set_port(int _port)
+{
+    port = _port;
+};
+
+
+
+
+void RCServer::set_address(std::string _address)
+{
+    address = _address;
+};
+
+
+
+
+void RCServer::set_ssl(bool _ssl)
+{
+    ssl = _ssl;
+};
+
+
+
+
+void RCServer::set_events_loop(std::shared_ptr<raspcontrol::RCEvents> _events)
+{
+    events = _events;
+};
+
+
+
+
+}

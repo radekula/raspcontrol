@@ -21,9 +21,11 @@
 #include <app/app.hpp>
 
 
+
+
 int main(int argc, char *argv[])
 {
-    RCApp app;
+    raspcontrol::RCApp app;
 
     app.init(argc, argv);
 

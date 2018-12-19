@@ -17,19 +17,58 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef __RASPCONTROL_RASPCONTROL_HPP__
-#define __RASPCONTROL_RASPCONTROL_HPP__
+#include <gpio/gpio.hpp>
 
 
 
 
-#include "app/app.hpp"
-#include "controller/controller.hpp"
-#include "events/events.hpp"
-#include "gpio/gpio.hpp"
-#include "server/server.hpp"
+namespace raspcontrol {
 
 
 
 
-#endif
+RCGpio::RCGpio()
+{
+};
+
+
+
+
+RCGpio::~RCGpio()
+{
+};
+
+
+
+
+void RCGpio::run()
+{
+};
+
+
+
+
+void RCGpio::stop()
+{
+};
+
+
+
+
+void RCGpio::set_device(std::string _gpio_device)
+{
+    gpio_device = _gpio_device;
+};
+
+
+
+
+void RCGpio::set_events_loop(std::shared_ptr<raspcontrol::RCEvents> _events)
+{
+    events = _events;
+};
+
+
+
+
+}
